@@ -2,9 +2,10 @@ FROM pypy
 COPY . /app
 ENV PYTHONPATH "/app:${PYTHONPATH}"
 WORKDIR /app
-RUN pip3 install Cython
-RUN pip3 install numpy
-RUN pypy3 -m pip install -r requirements.txt
+#RUN pip3 install Cython
+#RUN pip3 install numpy
+#RUN pypy3 -m pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 EXPOSE 5000
 
 # Define environment variable
