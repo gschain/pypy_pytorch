@@ -1,4 +1,3 @@
-Cython
 pandas
 torch
 seldon-core

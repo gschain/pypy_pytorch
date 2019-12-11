@@ -2,6 +2,7 @@ FROM pypy
 COPY . /app
 ENV PYTHONPATH "/app:${PYTHONPATH}"
 WORKDIR /app
+RUN pip3 install Cython
 RUN pypy3 -m pip install -r requirements.txt
 EXPOSE 5000
 
