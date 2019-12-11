@@ -1,4 +1,3 @@
-pandas
 torch
+pandas
 seldon-core
-sklearn
