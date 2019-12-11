@@ -1,0 +1,30 @@
+apiVersion: machinelearning.seldon.io/v1alpha2
+kind: SeldonDeployment
+metadata:
+  name: stupid-meta-name
+spec:
+  name: stupid-spec-name
+  predictors:
+  - componentSpecs:
+    - spec:
+        containers:
+        - name: classifier
+          image: whitelilis/pytorch:2.2
+          env:
+          - name: SELDON_LOG_LEVEL
+            value: DEBUG
+    graph:
+      children: []
+      endpoint:
+        type: REST
+      name: classifier
+      type: MODEL
+      parameters:
+        - name: fix
+          type: INT
+          value: "55"
+        - name: url
+          type: STRING
+          value: https://shield.mlamp.cn/task/api/file/space/download/8ee73d61af60d387963f3c4badc4b2af/56504/deepfm_baseline_v0
+    name: stupdi-predict-name
+    replicas: 1
