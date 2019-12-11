@@ -1,4 +1,4 @@
-FROM pypy:3.6-slim
+FROM pypy:3.6
 COPY . /app
 ENV PYTHONPATH "/app:${PYTHONPATH}"
 WORKDIR /app
